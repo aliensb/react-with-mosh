@@ -2,6 +2,7 @@ import { useState } from "react";
 import Alert from "./components/Alert";
 import Button from "./components/Button";
 import ListGroup from "./components/ListGroup";
+import Like from "./components/Like";
 
 function App() {
   const onItemClick = (item: string) => {
@@ -21,9 +22,13 @@ function App() {
       </div>
       <div className="container">
         {showAlert && <Alert onClose={() => setShowAlert(false)}>alert</Alert>}
-        <Button type="danger" onClick={() => setShowAlert(true)}>
+        <Button type="primary" onClick={() => setShowAlert(true)}>
           click me
         </Button>
+      </div>
+
+      <div className="container">
+        <Like onClick={() => console.log("clicked")} />
       </div>
     </>
   );
