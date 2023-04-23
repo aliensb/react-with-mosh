@@ -5,6 +5,7 @@ import ListGroup from "./components/ListGroup";
 import Like from "./components/Like";
 import { Game } from "./components/UpdatingStatePractice";
 import { ExpandableText } from "./components/ExpandableText";
+import { Form } from "./components/Form";
 
 function App() {
   const onItemClick = (item: string) => {
@@ -50,6 +51,10 @@ function App() {
           accusamus itaque id velit rerum, praesentium nulla in, quasi error
           explicabo magni architecto provident reprehenderit commodi recusandae.
         </ExpandableText>
+      </div>
+
+      <div className="container mt-3">
+        <Form />
       </div>
     </>
   );

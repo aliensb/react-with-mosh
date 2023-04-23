@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { RoughSVG } from "react-rough-fiber";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 
 interface Props {
@@ -14,10 +15,16 @@ export default ({ onClick }: Props) => {
   };
 
   if (full) {
-    return <AiFillHeart color="#ff6b81" size={"20px"} onClick={onHeartClick} />;
+    return (
+      <RoughSVG>
+        <AiFillHeart color="#ff6b81" size={"50px"} onClick={onHeartClick} />
+      </RoughSVG>
+    );
   } else {
     return (
-      <AiOutlineHeart color="#ff6b81" size={"20px"} onClick={onHeartClick} />
+      <RoughSVG>
+        <AiOutlineHeart color="#ff6b81" size={"50px"} onClick={onHeartClick} />
+      </RoughSVG>
     );
   }
 };
