@@ -3,7 +3,7 @@ import "./ListGroup.css";
 interface Props {
   items: string[];
   title: string;
-  onItemClick: (item: string) => void;
+  onItemClick?: (item: string) => void;
 }
 
 function ListGroup({ items, title, onItemClick }: Props) {
@@ -21,10 +21,12 @@ function ListGroup({ items, title, onItemClick }: Props) {
             className={
               "list-group-item " + (index === selectedIndex ? "active" : null)
             }
-            key={item}
+            key={index}
             onClick={() => {
               setSelectedIndex(index);
-              onItemClick(item);
+              if (onItemClick) {
+                onItemClick(item);
+              }
             }}
           >
             {item}
